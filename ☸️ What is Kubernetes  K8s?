@@ -1,0 +1,59 @@
+What is Kubernetes / K8s? ☸️
+
+Kubernetes is a system used to manage many containers automatically.
+
+Suppose you have only one application:
+
+User
+ ↓
+One Container
+ ↓
+College AI Assistant
+
+Docker or Cloud Run can be enough.
+
+======
+
+But imagine your application becomes very large:
+
+100,000 Users
+      ↓
+Many Containers Needed
+
+You may have:
+
+Container 1 🤖
+Container 2 🤖
+Container 3 🤖
+Container 4 🤖
+Container 5 🤖
+...
+Container 100 🤖
+
+Managing them manually would be difficult.
+
+======
+
+This is where Kubernetes helps.
+
+                Kubernetes ☸️
+                      │
+        ┌─────────────┼─────────────┐
+        ↓             ↓             ↓
+   Container 1   Container 2   Container 3
+        ↓             ↓             ↓
+   Your App      Your App      Your App
+
+=====
+
+Kubernetes can help manage:
+
+📈 Scaling containers
+🔄 Restarting failed containers
+⚖️ Load balancing
+🚀 Deploying new versions
+🔁 Rolling updates
+🩺 Health checking
+
+=========
+
