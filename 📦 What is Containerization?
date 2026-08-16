@@ -1,0 +1,47 @@
+First: What is Containerization? 📦
+
+Containerization is the process of packaging an application together with everything it needs to run.
+
+Your application needs:
+
+Python
+FastAPI
+Required libraries
+Your main.py
+HTML, CSS, JavaScript
+Configuration
+
+Instead of installing everything manually on every server:
+
+New Server
+   ↓
+Install Python
+   ↓
+Install FastAPI
+   ↓
+Install Libraries
+   ↓
+Copy Project
+   ↓
+Configure Application
+   ↓
+Run
+
+=======
+
+Containerization packages everything together:
+
+Your Application
+      +
+Python
+      +
+FastAPI
+      +
+Libraries
+      ↓
+📦 CONTAINER
+
+This container can run consistently in different environments.
+
+=========
+
