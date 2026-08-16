@@ -1,0 +1,157 @@
+What is Flask? 🐍🌐
+
+Flask is a lightweight Python web framework used to build websites, web applications, and APIs.
+
+Simple definition:
+
+Python + Flask = Create custom web applications.
+
+Flask is popular because it is simple and gives developers flexibility.
+
+========
+
+How Flask Works
+User / Browser
+       ↓
+   Flask App
+       ↓
+ Python Logic
+       ↓
+Database / AI / API
+       ↓
+   Response
+       ↓
+Web Page / JSON
+
+========
+
+Simple Flask Example
+
+Create a file called app.py:
+
+from flask import Flask
+
+
+app = Flask(__name__)
+
+
+@app.route("/")
+def home():
+    return "Welcome to My College Website!"
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+=========
+
+What happens here?
+
+When you run:
+
+python app.py
+
+Flask starts a local web server.
+
+Then open:
+
+http://127.0.0.1:5000
+
+You will see:
+
+Welcome to My College Website!
+
+==========
+
+Flask Example for a College Website
+Student
+   ↓
+www.college.com
+   ↓
+Flask Application
+   ↓
+Check Python Logic / Database
+   ↓
+Show College Information
+
+====
+
+You can create pages such as:
+
+/
+├── Home
+├── /courses
+├── /admissions
+├── /contact
+└── /chatbot
+
+======
+
+Example:
+
+from flask import Flask
+
+
+app = Flask(__name__)
+
+
+@app.route("/")
+def home():
+    return "Welcome to Bright Future College"
+
+
+@app.route("/courses")
+def courses():
+    return "BCA, BBA, MBA, Computer Science"
+
+
+@app.route("/admissions")
+def admissions():
+    return "Admissions are now open!"
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+=======
+
+Flask for an AI Chatbot 🤖
+
+Flask can also connect to an AI model:
+
+Student
+   ↓
+Flask Website
+   ↓
+Ask Question 🤖
+   ↓
+Python Backend
+   ↓
+Gemini / Vertex AI
+   ↓
+AI Response
+   ↓
+Student
+
+For example:
+
+=======
+
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+@app.route("/ask", methods=["POST"])
+def ask():
+    question = request.json["question"]
+
+    # Send question to AI model
+    answer = "This is the AI response"
+
+    return jsonify({
+        "question": question,
+        "answer": answer
+    })
+
+========
+
