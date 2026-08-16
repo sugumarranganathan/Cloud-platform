@@ -1,0 +1,71 @@
+Django and FastAPI
+
+Django and FastAPI are Python web frameworks used by developers to build custom web applications.
+
+So the full picture is:
+
+| Category                          | Examples                    | Main Use                      |
+| --------------------------------- | --------------------------- | ----------------------------- |
+| **Website builders / CMS**        | WordPress, Wix, Squarespace | Create websites easily        |
+| **E-commerce platforms**          | Shopify                     | Create online stores          |
+| **Visual web development**        | Webflow                     | Design professional websites  |
+| **Custom development frameworks** | Django, FastAPI             | Build custom web applications |
+| **Frontend coding**               | HTML, CSS, JavaScript       | Build website interface       |
+
+
+==========
+
+Simple example
+Want to create a website?
+        │
+        ├── Without much coding
+        │       ↓
+        │   WordPress / Wix / Shopify
+        │
+        └── With custom programming
+                ↓
+        Django / FastAPI
+                +
+        HTML / CSS / JavaScript
+
+========
+
+
+Your project
+
+Your College AI Assistant is in the custom web application development category:
+
+HTML + CSS + JavaScript
+          ↓
+       FastAPI
+          ↓
+       Vertex AI
+          ↓
+Fine-Tuned Gemini 2.5 Flash
+          ↓
+       Cloud Run
+
+So WordPress and Django are not competitors in exactly the same category.
+
+WordPress → Ready-made platform to create and manage websites.
+Django → Framework for developers to program a complete custom web application.
+FastAPI → Framework mainly suited for APIs and AI/backend applications.
+
+=======
+
+You can even use them together:
+
+WordPress College Website
+          ↓
+"Ask AI Assistant" Button
+          ↓
+Your FastAPI AI Application
+          ↓
+Google Cloud Run
+
+So what I told you earlier is still correct—I was explaining different categories of website creation.
+
+The practical choice depends on whether you need a content-focused site or a custom application, so 
+compare WordPress, Django, and FastAPI for your College AI Assistant before selecting the platform.
+
+=======
