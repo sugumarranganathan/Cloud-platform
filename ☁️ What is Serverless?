@@ -1,0 +1,77 @@
+What is Serverless? ☁️
+
+Serverless means you run your application without managing the server yourself.
+
+⚠️ It does not mean there are no servers. Servers still exist, but the cloud provider manages them for you.
+
+Traditional Server
+You
+ ↓
+Buy/Configure Server
+ ↓
+Install OS
+ ↓
+Install Python
+ ↓
+Install Software
+ ↓
+Run Application
+ ↓
+Maintain Server
+
+You are responsible for managing the server.
+
+Serverless
+You
+ ↓
+Deploy Your Application
+ ↓
+Cloud Platform ☁️
+ ↓
+Cloud Provider Manages Servers
+ ↓
+Application Runs 🚀
+Your College AI Assistant
+
+Your project uses:
+
+FastAPI Application
+        ↓
+Docker Container 📦
+        ↓
+Google Cloud Run ☁️
+        ↓
+Serverless Platform
+        ↓
+Users Access Your Chatbot 🤖
+
+So you don't have to create and maintain a virtual machine/server yourself.
+
+| Traditional Server           | Serverless                        |
+| ---------------------------- | --------------------------------- |
+| You manage the server        | Cloud provider manages the server |
+| You configure infrastructure | Less infrastructure management    |
+| Server may run continuously  | Can scale based on requests       |
+| More server administration   | Focus more on application code    |
+
+
+Simple example 🏠
+
+Think of it like this:
+
+Traditional server = You buy and maintain your own house. 🏠
+Serverless = You use a managed hotel room; you use it, while someone else manages the building. 🏨
+
+In one sentence
+
+Serverless = Deploy your code or container, and the cloud provider manages the underlying servers and infrastructure.
+
+====
+Your Google Cloud Run deployment is serverless because you deploy your FastAPI application in a container, while Google manages the servers that run it.
+
+====
+
+Cloud Run is serverless because Google manages the underlying servers, while 
+your Docker container still defines how the FastAPI application runs and scales with incoming requests.
+
+=======
