@@ -1,0 +1,35 @@
+| Docker 🐳                                 | Kubernetes ☸️                               |
+| ----------------------------------------- | ------------------------------------------- |
+| Creates and runs containers               | Manages multiple containers                 |
+| Packages the application                  | Orchestrates containers                     |
+| Good for individual applications/services | Good for larger containerized systems       |
+| Creates Docker images                     | Deploys and manages container workloads     |
+| Example: Your FastAPI app                 | Example: Hundreds of application containers |
+
+
+============
+
+imple analogy
+Docker = Builds cars 🚗
+
+
+Container = The car 🚙
+
+
+Kubernetes = Traffic management system 🚦
+
+========
+
+Another example:
+
+Docker 🐳
+   ↓
+Creates containers 📦
+
+
+Kubernetes ☸️
+   ↓
+Manages many containers 📦📦📦
+
+=========
+
