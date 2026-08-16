@@ -1,0 +1,34 @@
+What is Cloud? ☁️
+
+In simple words, cloud computing means using computers, storage, databases, software, and AI services through the internet instead of owning and managing everything on your own computer.
+
+Simple example
+
+Without cloud:
+
+Your Chromebook
+     ↓
+Run everything on your own device
+
+With cloud:
+
+Your Chromebook
+     ↓ Internet 🌐
+Cloud Server ☁️
+     ↓
+Your Application / Database / AI Model
+
+For example, your College AI Assistant runs like this:
+
+Your User
+   ↓
+Google Cloud Run ☁️
+   ↓
+FastAPI Application
+   ↓
+Google Vertex AI
+   ↓
+Fine-Tuned Gemini Model 🤖
+
+======
+
