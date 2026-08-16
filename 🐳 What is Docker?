@@ -1,0 +1,65 @@
+What is Docker? 🐳
+
+Docker is a popular tool/platform used to create, package, and run containers.
+
+For your project:
+
+College AI Assistant
+        ↓
+Dockerfile
+        ↓
+Docker builds the application
+        ↓
+Docker Image
+        ↓
+Docker Container
+
+=====
+
+Important difference
+
+| Item                 | Meaning                                               |
+| -------------------- | ----------------------------------------------------- |
+| **Dockerfile**       | Instructions for building the application environment |
+| **Docker Image**     | The packaged application template                     |
+| **Docker Container** | A running instance of the image                       |
+| **Docker**           | Tool used to build and run containers                 |
+
+
+=======
+
+Example
+
+Your project:
+
+college-ai-assistant/
+│
+├── main.py
+├── requirements.txt
+├── Dockerfile
+├── templates/
+└── static/
+
+Your Dockerfile tells Docker something like:
+
+Use Python
+↓
+Install FastAPI and dependencies
+↓
+Copy my project files
+↓
+Start the application
+
+Then:
+
+Dockerfile
+    ↓
+docker build
+    ↓
+Docker Image 📦
+    ↓
+docker run
+    ↓
+Running Container 🚀
+
+=========
