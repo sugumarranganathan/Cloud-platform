@@ -31,4 +31,54 @@ Google Vertex AI
 Fine-Tuned Gemini Model 🤖
 
 ======
+Major Cloud Providers
 
+There are many cloud companies. The most well-known are:
+
+| Cloud Provider            | Company      |
+| ------------------------- | ------------ |
+| ☁️ **Google Cloud (GCP)** | Google       |
+| ☁️ **AWS**                | Amazon       |
+| ☁️ **Microsoft Azure**    | Microsoft    |
+| ☁️ **Oracle Cloud**       | Oracle       |
+| ☁️ **IBM Cloud**          | IBM          |
+| ☁️ **Alibaba Cloud**      | Alibaba      |
+| ☁️ **DigitalOcean**       | DigitalOcean |
+
+
+The top three commonly used clouds
+1. AWS ☁️
+2. Microsoft Azure ☁️
+3. Google Cloud ☁️
+
+Each cloud provides services such as:
+
+| Service      | Example                          |
+| ------------ | -------------------------------- |
+| 💻 Computing | Run applications                 |
+| 📦 Storage   | Store files and data             |
+| 🗄️ Database | Store application data           |
+| 🤖 AI/ML     | Train and use AI models          |
+| 🌐 Hosting   | Deploy websites and applications |
+| 🔐 Security  | Protect applications and data    |
+
+
+For your project
+
+You are currently using Google Cloud:
+
+Google Cloud Platform
+│
+├── Cloud Shell → Write/run cloud commands
+├── Vertex AI → AI and Gemini services
+├── Cloud Run → Deploy your application
+└── Docker → Package your application
+
+So, think of cloud as renting powerful computers and services through the internet instead of buying and maintaining your own servers.
+
+Your current College AI Assistant is a good example of a cloud-based AI application because it uses Google Cloud services for deployment and AI.
+
+Cloud computing is not one single cloud; it is a category of internet-based services, and 
+the main cloud deployment types are public, private, hybrid, and multicloud.
+
+=====
