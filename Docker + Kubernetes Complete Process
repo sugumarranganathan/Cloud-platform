@@ -1,0 +1,93 @@
+1. Develop Application 💻
+        ↓
+2. Create requirements.txt 📄
+        ↓
+3. Create Dockerfile 🐳
+        ↓
+4. Build Docker Image 📦
+        ↓
+5. Push Image to Container Registry
+        ↓
+6. Kubernetes Deployment ☸️
+        ↓
+7. Kubernetes creates Containers
+        ↓
+8. Users access Application 🌐
+
+========
+
+Your Current Project vs Kubernetes
+
+Your current architecture is:
+
+User
+  ↓
+Google Cloud Run ☁️
+  ↓
+Docker Container 📦
+  ↓
+FastAPI Application
+  ↓
+Vertex AI
+  ↓
+Fine-Tuned Gemini 2.5 Flash 🤖
+
+So currently:
+
+Containerization → Yes ✅
+Docker → Yes ✅
+Serverless → Yes, through Cloud Run ✅
+Kubernetes → Not required for your current project ❌
+
+=========
+
+When would you use Kubernetes?
+
+For example, imagine a large college system:
+
+                    Users
+                      ↓
+                 Kubernetes ☸️
+                      │
+     ┌────────────────┼────────────────┐
+     ↓                ↓                ↓
+AI Chatbot      Student Portal    Admission System
+Containers      Containers        Containers
+     ↓                ↓                ↓
+Database         Database          Database
+
+
+Kubernetes becomes useful when you have many services, containers, replicas, and more advanced infrastructure requirements.
+
+======
+
+| Technology           | Simple Meaning                                        | Your Project           |
+| -------------------- | ----------------------------------------------------- | ---------------------- |
+| **Containerization** | Package app and dependencies together                 | ✅ Used                 |
+| **Docker**           | Build/package containers                              | ✅ Used                 |
+| **Docker Image**     | Packaged application template                         | ✅ Used in deployment   |
+| **Docker Container** | Running application package                           | ✅ Used                 |
+| **Cloud Run**        | Managed platform that runs your container             | ✅ Used                 |
+| **Serverless**       | Provider manages the underlying infrastructure        | ✅ Used                 |
+| **Kubernetes**       | Manages and orchestrates container workloads at scale | ❌ Not currently needed |
+
+
+=========
+
+Containerization = The process 📦
+Docker = The tool 🐳
+Container = The running package 🚀
+Kubernetes = The manager of containers ☸️
+Cloud Run = Managed/serverless platform to run your container ☁️
+
+========
+
+For your College AI Assistant, your current setup is a good example of:
+
+FastAPI Application → Docker Container → Google Cloud Run → Serverless Deployment → Vertex AI
+
+For your College AI Assistant, the key distinction is that 
+Docker creates the container, while Kubernetes manages multiple running containers when scaling and reliability become more complex.
+
+==========
+
