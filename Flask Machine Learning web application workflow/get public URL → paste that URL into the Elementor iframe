@@ -1,0 +1,82 @@
+WordPress/Elementor HTML block with an <iframe> to display an already running application inside your website.
+
+To add your Chronic Kidney Disease Prediction Flask app, the workflow is:
+
+1. Your CKD Flask app must be running online
+Your Flask CKD App
+       ↓
+Deploy to Cloud
+       ↓
+Get Public URL
+       ↓
+Example:
+https://your-ckd-app.run.app
+
+Important: http://127.0.0.1:8080 will not work inside your public WordPress website because it only runs on your local computer.
+
+2. Add the CKD app URL in Elementor
+
+In the HTML Code section shown in your screenshot, add:
+
+<iframe 
+    src="YOUR_CKD_APP_PUBLIC_URL"
+    width="100%"
+    height="800px"
+    style="border: none;">
+</iframe>
+
+For example, after deployment:
+
+<iframe 
+    src="https://your-ckd-app.run.app"
+    width="100%"
+    height="800px"
+    style="border: none;">
+</iframe>
+
+===
+
+Complete workflow
+User visits your WordPress Website
+              ↓
+         Elementor Page
+              ↓
+            iframe
+              ↓
+    CKD Flask Application
+              ↓
+     User enters Age, BP,
+ Specific Gravity, Albumin, Sugar
+              ↓
+      finalized_model_ckd.sav
+              ↓
+         Prediction Result
+              ↓
+       Display on Website
+
+======
+
+
+
+Your project
+ML_Projects_Flask/
+│
+├── app.py
+├── finalized_model_ckd.sav
+├── requirements.txt
+│
+└── templates/
+    ├── input.html
+    └── output.html
+
+So the next step is:
+
+Run locally → test → deploy your Flask CKD app → get public URL → paste that URL into the Elementor iframe src.
+
+If you want, send me your requirements.txt and I can give you the exact next deployment steps for this CKD Flask app.
+
+Because the iframe needs a public address, the deployment choice determines how your CKD app becomes reachable from WordPress: 
+compare the simplest deployment options for this Flask app before you paste the URL into Elementor.
+
+=========
+
