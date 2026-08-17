@@ -1,0 +1,35 @@
+both custom-made and ready-made websites can add your CKD application. The method is slightly different.
+
+
+| Website Type            | Can Add CKD App? | How                                                             |
+| ----------------------- | ---------------- | --------------------------------------------------------------- |
+| **Custom-made website** | ✅ Yes            | Integrate directly with the code or embed the app using its URL |
+| **Ready-made website**  | ✅ Yes            | Add the public URL using an iframe/embed block                  |
+
+
+Simple idea
+                    CKD Flask Application
+                           │
+                    Public URL
+                           │
+              ┌────────────┴────────────┐
+              ↓                         ↓
+       Custom Website             Ready-made Website
+       HTML/CSS/JS                WordPress/Elementor
+              ↓                         ↓
+       Direct Integration            iframe
+              ↓                         ↓
+            User                      User
+
+So the main requirement is:
+
+Your Flask CKD application must be deployed and have a public URL.
+
+Then it can be connected to both types of websites.
+
+Both website types can use the same deployed Flask app, but the integration differs: 
+custom sites can connect through direct API requests instead of an iframe, while ready-made sites usually embed the public app URL.
+
+======
+
+
