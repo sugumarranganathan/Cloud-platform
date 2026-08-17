@@ -1,0 +1,22 @@
+Custom website vs Ready-Made website
+
+
+| Custom-Made Website           | Ready-Made Website             |
+| ----------------------------- | ------------------------------ |
+| Built from scratch            | Already designed               |
+| More coding                   | Less coding                    |
+| Full control                  | Template-based                 |
+| Direct integration possible   | Usually embed using URL/iframe |
+| Example: Flask/Django website | Example: WordPress + Elementor |
+
+
+Your CKD project can be added to both.
+
+Custom-made website: integrate the CKD feature directly into the website code.
+Ready-made website: deploy the CKD app and embed its public URL using an iframe or embed widget.
+
+A ready-made website can host the CKD app through an embedded public URL, while a custom site can integrate it directly; 
+compare both options for cost, control, security, and maintenance before choosing.
+
+=========
+
