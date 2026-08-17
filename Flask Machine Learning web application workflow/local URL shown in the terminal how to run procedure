@@ -1,0 +1,59 @@
+1. Install virtual environment support
+sudo apt install python3-venv -y
+2. Create a virtual environment
+
+You are already inside:
+
+~/ML_Projects_Flask
+
+Run:
+
+python3 -m venv venv
+3. Activate the virtual environment
+source venv/bin/activate
+
+After activation, your terminal should look similar to:
+
+(venv) sugumarranganathan52@penguin:~/ML_Projects_Flask$
+4. Install the requirements
+pip install -r requirements.txt
+5. Run your Flask application
+
+Your main file is app.py, so run:
+
+python app.py
+
+========
+Complete commands
+
+-------
+sudo apt install python3-venv -y
+
+python3 -m venv venv
+
+source venv/bin/activate
+
+pip install -r requirements.txt
+
+python app.py
+---------
+
+==========
+
+sugumarranganathan52@penguin:~/ML_Projects_Flask$ sudo apt install python3-venv -y
+python3-venv is already the newest version (3.13.5-1).
+Summary:
+  Upgrading: 0, Installing: 0, Removing: 0, Not Upgrading: 63
+sugumarranganathan52@penguin:~/ML_Projects_Flask$ python3 -m venv venv
+sugumarranganathan52@penguin:~/ML_Projects_Flask$ source venv/bin/activate
+(venv) sugumarranganathan52@penguin:~/ML_Projects_Flask$ pip install -r requirements.txt
+Collecting numpy==1.26.4 (from -r requirements.txt (line 1))
+  Downloading numpy-1.26.4.tar.gz (15.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.8/15.8 MB 9.3 MB/s eta 0:00:00
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Installing backend dependencies ... done
+  Preparing metadata (pyproject.toml) ... |
+
+==
+
