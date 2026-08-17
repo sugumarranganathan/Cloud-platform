@@ -1,0 +1,90 @@
+Docker — Simple Explanation
+
+Docker is a platform used to package an application and all its required dependencies into a container.
+
+For example, your Flask CKD application needs:
+
+Python
+Flask
+NumPy
+Pickle
+Your ML model (finalized_model_ckd.sav)
+Your application code (app.py)
+
+Instead of installing everything manually on every computer, Docker packages the application into a container.
+
+=====
+
+Without Docker
+Your Computer
+    ↓
+Install Python
+    ↓
+Install Flask
+    ↓
+Install NumPy
+    ↓
+Install Dependencies
+    ↓
+Run app.py
+
+Sometimes you may get errors like:
+
+ModuleNotFoundError: No module named 'flask'
+
+====
+
+With Docker
+Your Application
+      +
+Python
+      +
+Flask
+      +
+Libraries
+      +
+ML Model
+      ↓
+   Docker Image
+      ↓
+Docker Container
+      ↓
+Application Runs
+
+====
+
+Simple example using your CKD project
+ML_Projects_Flask/
+│
+├── app.py
+├── finalized_model_ckd.sav
+├── requirements.txt
+├── templates/
+└── Dockerfile
+
+The Dockerfile contains instructions such as:
+
+Use Python
+↓
+Copy application files
+↓
+Install requirements.txt
+↓
+Run app.py
+
+===
+
+Easy definition
+
+Docker = A tool that packages an application with everything it needs so it can run consistently on different computers or cloud platforms.
+
+===
+
+For your project:
+
+Flask CKD Application → Docker Container → Cloud Run / other cloud platform → Public URL
+
+Docker makes your CKD Flask application portable and consistent, and 
+the Dockerfile and commands needed to run this project show exactly how the container is built and started.
+
+===========
