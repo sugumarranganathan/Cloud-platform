@@ -1,0 +1,104 @@
+A custom-made website is a website built specifically using code according to the customer's or company's requirements.
+
+Instead of selecting a ready-made template, the developer designs and develops the website structure, features, frontend, and backend.
+
+Example
+
+Suppose a hospital wants a Chronic Kidney Disease (CKD) Prediction Website.
+
+The custom website can be built like this:
+
+| Part       | Technology                | Purpose                              |
+| ---------- | ------------------------- | ------------------------------------ |
+| Frontend   | HTML, CSS, JavaScript     | User interface                       |
+| Backend    | Flask / Django / FastAPI  | Handles user requests                |
+| ML Model   | `finalized_model_ckd.sav` | Predicts CKD                         |
+| Database   | MySQL / PostgreSQL        | Stores user or prediction data       |
+| Deployment | Cloud server              | Makes the website publicly available |
+
+
+=======
+
+Example workflow
+
+                 USER
+                   │
+                   ▼
+        Custom-Made Website
+        ┌───────────────────┐
+        │ Frontend          │
+        │ HTML / CSS / JS   │
+        │                   │
+        │ Enter CKD Details │
+        └─────────┬─────────┘
+                  │
+                  ▼
+             Backend
+          Flask / Django
+                  │
+                  ▼
+          ML Model (.sav)
+                  │
+                  ▼
+            Prediction
+                  │
+                  ▼
+          Show Result to User
+
+=====
+
+Example project structure
+
+CKD_Website/
+│
+├── app.py                    ← Backend
+├── finalized_model_ckd.sav   ← ML Model
+│
+├── templates/
+│   ├── index.html            ← CKD input page
+│   └── result.html           ← Prediction result
+│
+└── static/
+    ├── style.css             ← Website design
+    └── script.js             ← Frontend interaction
+
+
+======
+
+Real example
+
+A user opens:
+
+www.hospitalwebsite.com/ckd-prediction
+
+Then:
+
+User enters:
+Age: 45
+Blood Pressure: 80
+Specific Gravity: 1.02
+Albumin: 2
+Sugar: 1
+        ↓
+Click "Predict"
+        ↓
+Flask Backend
+        ↓
+CKD ML Model
+        ↓
+Prediction
+        ↓
+"Chronic Kidney Disease Detected"
+Simple definition
+
+Custom-made website = A website built specifically using code based on the customer's requirements.
+
+For your CKD project, you could build the entire website and CKD prediction feature together using Flask:
+
+Frontend + Backend + ML Model = Complete Custom-Made CKD Website
+
+A custom-made CKD website can combine the interface and prediction system in one project, and 
+the exact Flask folder structure and code for this website can show how the pieces connect.
+
+
+==========
