@@ -1,0 +1,88 @@
+Ready-Made Website
+
+A ready-made website is a website that is already designed and built using a template, theme, or website builder. You do not need to create everything from scratch.
+
+You mainly select, customize, and add your own content or features.
+
+Examples
+
+| Platform      | How it works                        |
+| ------------- | ----------------------------------- |
+| **WordPress** | Select a theme and customize pages  |
+| **Elementor** | Drag-and-drop website design        |
+| **Wix**       | Ready-made website templates        |
+| **Shopify**   | Ready-made e-commerce website       |
+| **Webflow**   | Templates with visual customization |
+
+
+Example: Hospital Website + CKD Application
+
+Suppose you already have a ready-made hospital website:
+
+Hospital Website
+│
+├── Home
+├── About Us
+├── Services
+├── Doctors
+├── Contact
+└── CKD Prediction  ← Add this page
+
+
+===
+
+
+The CKD application is separately deployed:
+
+CKD Flask Application
+        │
+        ▼
+Public URL
+        │
+        ▼
+https://your-ckd-app-url
+
+Then add that URL to the ready-made website using an HTML/Embed widget or iframe:
+
+===
+
+<iframe
+    src="YOUR_CKD_APP_PUBLIC_URL"
+    width="100%"
+    height="800"
+    style="border: none;">
+</iframe>
+
+========
+
+Workflow
+Ready-Made Website
+(WordPress + Elementor)
+          │
+          ▼
+      CKD Page
+          │
+          ▼
+HTML / Embed Widget
+          │
+          ▼
+     iframe + Public URL
+          │
+          ▼
+CKD Flask Application
+          │
+          ▼
+       ML Model
+          │
+          ▼
+      Prediction
+          │
+          ▼
+         User
+Simple definition
+
+Ready-made website = An already built website/template that you customize and add your own content or applications to.
+
+=====
+
+
