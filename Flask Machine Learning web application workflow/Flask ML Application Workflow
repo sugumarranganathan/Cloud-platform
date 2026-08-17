@@ -81,4 +81,38 @@ passing them to model.pkl for prediction and rendering the result in index.html,
 
 =======
 
+| Step | File / Component | Action                          |
+| ---- | ---------------- | ------------------------------- |
+| 1    | `index.html`     | User enters input               |
+| 2    | `main.py`        | Flask receives the request      |
+| 3    | `model.pkl`      | ML model processes the input    |
+| 4    | `main.py`        | Gets the prediction result      |
+| 5    | `index.html`     | Displays the result to the user |
+
+
+=======
+
+Flow:
+
+User → index.html → main.py → model.pkl → main.py → index.html → User
+
+The table identifies each Flask ML component, and 
+the request flow can be mapped to a complete main.py example so the files work together in practice.
+
+=========
+
+| File / Folder | Type                   | Purpose                                                                                                               |
+| ------------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `main.py`     | Python Backend         | Main Flask application. Handles requests, user input, ML model processing, and sends the result back to the frontend. |
+| `model.pkl`   | Machine Learning Model | Stores the trained ML model and is used to make predictions.                                                          |
+| `templates/`  | Folder                 | Contains HTML files used for the frontend.                                                                            |
+| `index.html`  | HTML Frontend          | Displays the user interface, accepts user input, and shows the prediction result.                                     |
+| `static/`     | Folder                 | Contains static frontend files.                                                                                       |
+| `style.css`   | CSS                    | Controls the design, colors, layout, and appearance of the website.                                                   |
+
+
+==========
+
+
+
 
