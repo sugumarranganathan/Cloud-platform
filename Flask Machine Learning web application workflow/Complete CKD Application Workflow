@@ -1,0 +1,471 @@
+Complete CKD Application Workflow
+
+                USER
+                  │
+                  ▼
+            input.html
+                  │
+         Enter CKD Details
+                  │
+                  ▼
+             POST Request
+                  │
+                  ▼
+             /predict
+                  │
+                  ▼
+              main.py
+                  │
+                  ▼
+          Extract Form Data
+                  │
+                  ▼
+         Convert to NumPy Array
+                  │
+                  ▼
+    finalized_model_ckd.sav
+          (Trained ML Model)
+                  │
+                  ▼
+             Prediction
+                  │
+                  ▼
+         CKD / No CKD Result
+                  │
+                  ▼
+            output.html
+                  │
+                  ▼
+                USER
+
+=====
+
+from flask import Flask, render_template, request, jsonify
+import pickle
+import numpy as np
+
+#app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
+# Load the pre-trained model
+filename = 'finalized_model_ckd.sav'
+model = pickle.load(open(filename, 'rb'))
+
+@app.route('/')
+def index():
+    return render_template('input.html')
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    try:
+        # Extract input features from form
+        age = float(request.form['age'])
+        blood_pressure = float(request.form['blood_pressure'])
+        specific_gravity = float(request.form['specific_gravity'])
+        albumin = float(request.form['albumin'])
+        sugar = float(request.form['sugar'])
+
+        # Format the input data into a numpy array
+        input_data = np.array([[age, blood_pressure, specific_gravity, albumin, sugar]])
+
+        # Make prediction using the loaded model
+        prediction = model.predict(input_data)
+        print(prediction)
+        # Map prediction to result
+        result = 'Chronic Kidney Disease Detected' if prediction[0] == 1 else 'No Chronic Kidney Disease'
+        #result=prediction
+        print(result)
+
+        return render_template('output.html', result=result)
+    except Exception as e:
+        return jsonify({'error': str(e)})
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080, debug=True)
+
+
+above code explain in table format
+
+==============
+1. Import Libraries
+--------------------
+
+from flask import Flask, render_template, request, jsonify
+import pickle
+import numpy as np
+
+
+| Code                                                         | Explanation                                                      |
+| ------------------------------------------------------------ | ---------------------------------------------------------------- |
+| `from flask import Flask, render_template, request, jsonify` | Imports Flask components needed to create the web application.   |
+| `Flask`                                                      | Creates the Flask application.                                   |
+| `render_template`                                            | Displays HTML pages from the `templates` folder.                 |
+| `request`                                                    | Receives data entered by the user in the form.                   |
+| `jsonify`                                                    | Returns errors in JSON format.                                   |
+| `import pickle`                                              | Used to load the saved machine learning model.                   |
+| `import numpy as np`                                         | Used to create and format numerical input data for the ML model. |
+
+
+==============
+
+#app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
+
+
+
+2. Create Flask Application
+---------------------------
+
+| Code                                                 | Explanation                                                                      |
+| ---------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `app = Flask(__name__)`                              | Creates the Flask application.                                                   |
+| `app = Flask(__name__, template_folder='templates')` | Creates the Flask application and explicitly specifies the HTML template folder. |
+
+explicitly = clearly mentioning it in the code.
+
+In your code, this line is commented: (Commented means a line of code is temporarily disabled) # = Comment → Python ignores that line.
+
+#app = Flask(__name__)
+
+The active line is:
+
+app = Flask(__name__, template_folder='templates')
+
+
+=============
+
+3. Load the Trained CKD Model
+
+
+# Load the pre-trained model
+filename = 'finalized_model_ckd.sav'
+model = pickle.load(open(filename, 'rb'))
+
+
+| Code                                   | Explanation                                              |
+| -------------------------------------- | -------------------------------------------------------- |
+| `filename = 'finalized_model_ckd.sav'` | Stores the name of the saved ML model file.              |
+| `pickle.load(...)`                     | Loads the trained model from the `.sav` file.            |
+| `open(filename, 'rb')`                 | Opens the model file in read-binary mode.                |
+| `model`                                | Contains the loaded ML model and is used for prediction. |
+
+
+finalized_model_ckd.sav
+          ↓
+       Pickle
+          ↓
+     Loaded Model
+
+==========
+
+4. Home Page Route
+
+
+@app.route('/')
+def index():
+    return render_template('input.html')
+
+
+
+| Code                            | Explanation                                                       |
+| ------------------------------- | ----------------------------------------------------------------- |
+| `@app.route('/')`               | Defines the home page URL.                                        |
+| `def index():`                  | Creates the function that runs when the user opens the home page. |
+| `render_template('input.html')` | Displays the `input.html` page.                                   |
+
+
+Flow
+------
+
+User opens website
+       ↓
+       /
+       ↓
+index()
+       ↓
+input.html
+
+=========
+
+5. Prediction Route
+
+
+
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    try:
+        
+
+
+
+| Code                                       | Explanation                                           |
+| ------------------------------------------ | ----------------------------------------------------- |
+| `@app.route('/predict', methods=['POST'])` | Creates the `/predict` URL and accepts POST requests. |
+| `def predict():`                           | Function that processes the user's health data.       |
+| `try:`                                     | Starts error handling.                                |
+
+
+The user submits the form:
+
+input.html
+     ↓
+POST Request
+     ↓
+/predict
+     ↓
+predict()
+
+
+======
+
+6. Getting User Input
+
+
+# Extract input features from form
+        age = float(request.form['age'])
+        blood_pressure = float(request.form['blood_pressure'])
+        specific_gravity = float(request.form['specific_gravity'])
+        albumin = float(request.form['albumin'])
+        sugar = float(request.form['sugar'])
+
+
+
+| Input Feature    | Code                               | Purpose                            |
+| ---------------- | ---------------------------------- | ---------------------------------- |
+| Age              | `request.form['age']`              | Gets the patient's age.            |
+| Blood Pressure   | `request.form['blood_pressure']`   | Gets blood pressure value.         |
+| Specific Gravity | `request.form['specific_gravity']` | Gets urine specific gravity value. |
+| Albumin          | `request.form['albumin']`          | Gets albumin value.                |
+| Sugar            | `request.form['sugar']`            | Gets sugar value.                  |
+
+
+
+
+Each value is converted into a number using:
+
+float()
+
+Example:
+
+age = float(request.form['age'])
+
+Flow
+-----
+
+User enters data
+      ↓
+input.html Form
+      ↓
+request.form
+      ↓
+Python Variables
+
+==========
+
+7. Convert Input into NumPy Array
+
+
+
+
+ # Format the input data into a numpy array
+        input_data = np.array([[age, blood_pressure, specific_gravity, albumin, sugar]])
+
+        
+
+
+| Code         | Explanation                                         |
+| ------------ | --------------------------------------------------- |
+| `np.array()` | Creates a numerical array.                          |
+| `[[...]]`    | Creates one row containing all five input features. |
+| `input_data` | Final formatted data sent to the ML model.          |
+
+
+
+-------------
+input_data = np.array([
+    [age, blood_pressure, specific_gravity, albumin, sugar]
+])
+----------
+
+Example:
+
+Age              = 45
+Blood Pressure   = 80
+Specific Gravity = 1.02
+Albumin          = 2
+Sugar            = 1
+
+Converted to:
+
+[[45, 80, 1.02, 2, 1]]
+
+
+=========
+
+8. Machine Learning Prediction
+
+# Make prediction using the loaded model
+        prediction = model.predict(input_data)
+        print(prediction)
+
+
+
+| Code                        | Explanation                                                  |
+| --------------------------- | ------------------------------------------------------------ |
+| `model.predict(input_data)` | Sends the input data to the trained CKD model.               |
+| `prediction`                | Stores the prediction result.                                |
+| `print(prediction)`         | Prints the prediction in the terminal for testing/debugging. |
+
+prediction = model.predict(input_data)
+
+ML Flow
+User Input
+     ↓
+NumPy Array
+     ↓
+Trained CKD Model
+(finalized_model_ckd.sav)
+     ↓
+Prediction
+
+=========
+
+9. Convert Prediction into a Message
+
+
+
+# Make prediction using the loaded model
+        prediction = model.predict(input_data)
+        print(prediction)
+        # Map prediction to result
+        result = 'Chronic Kidney Disease Detected' if prediction[0] == 1 else 'No Chronic Kidney Disease'
+        #result=prediction
+        print(result)
+
+
+| Condition            | Result                          |
+| -------------------- | ------------------------------- |
+| `prediction[0] == 1` | Chronic Kidney Disease Detected |
+| Otherwise            | No Chronic Kidney Disease       |
+
+
+Code:
+
+result = 'Chronic Kidney Disease Detected' if prediction[0] == 1 else 'No Chronic Kidney Disease'
+
+This is a conditional statement.
+
+===========
+
+10. Display the Result
+
+return render_template('output.html', result=result)
+    except Exception as e:
+        return jsonify({'error': str(e)})
+
+
+
+
+
+| Code                                            | Explanation                                   |
+| ----------------------------------------------- | --------------------------------------------- |
+| `render_template('output.html', result=result)` | Opens `output.html`.                          |
+| `result=result`                                 | Sends the prediction result to the HTML page. |
+
+
+Flow
+-----
+
+ML Prediction
+      ↓
+result variable
+      ↓
+output.html
+      ↓
+User sees CKD result
+
+===========
+
+11. Error Handling
+
+| Code                     | Explanation                                  |
+| ------------------------ | -------------------------------------------- |
+| `except Exception as e:` | Catches errors that occur during prediction. |
+| `str(e)`                 | Converts the error into text.                |
+| `jsonify()`              | Returns the error as JSON.                   |
+
+
+return jsonify({'error': str(e)})
+
+Example:
+
+{
+    "error": "Invalid input"
+}
+
+=============
+
+12. Run the Flask Application
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080, debug=True)
+
+
+| Code                         | Explanation                                                                            |
+| ---------------------------- | -------------------------------------------------------------------------------------- |
+| `if __name__ == '__main__':` | Checks whether this file is being run directly.                                        |
+| `app.run()`                  | Starts the Flask web server.                                                           |
+| `host='0.0.0.0'`             | Allows the application to be accessed externally from the available network interface. |
+| `port=8080`                  | Runs the application on port 8080.                                                     |
+| `debug=True`                 | Shows detailed errors and automatically reloads during development.                    |
+
+
+==========
+
+Complete CKD Application Workflow
+                USER
+                  │
+                  ▼
+            input.html
+                  │
+         Enter CKD Details
+                  │
+                  ▼
+             POST Request
+                  │
+                  ▼
+             /predict
+                  │
+                  ▼
+              main.py
+                  │
+                  ▼
+          Extract Form Data
+                  │
+                  ▼
+         Convert to NumPy Array
+                  │
+                  ▼
+    finalized_model_ckd.sav
+          (Trained ML Model)
+                  │
+                  ▼
+             Prediction
+                  │
+                  ▼
+         CKD / No CKD Result
+                  │
+                  ▼
+            output.html
+                  │
+                  ▼
+                USER
+Easy formula to remember
+
+Frontend (input.html) → Flask Backend (main.py) → ML Model (finalized_model_ckd.sav) → Prediction → Flask → output.html → User
+
+The code converts five form values into one model input row, so 
+the feature order and data types must exactly match the order used during CKD model training to keep predictions reliable.
+
+=========
+
