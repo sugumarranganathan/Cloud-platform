@@ -1,0 +1,52 @@
+Git vs GitHub
+
+| Feature                 | **Git**                              | **GitHub**                           |
+| ----------------------- | ------------------------------------ | ------------------------------------ |
+| **What is it?**         | Version control system               | Online platform for Git repositories |
+| **Main purpose**        | Tracks changes in code               | Stores and shares code online        |
+| **Where does it work?** | Your local computer                  | Cloud / Internet                     |
+| **Internet required?**  | ❌ No                                 | ✅ Yes                                |
+| **Installation**        | Must be installed on your computer   | No installation; use website         |
+| **Tracks code history** | ✅ Yes                                | Displays and stores Git history      |
+| **Main commands**       | `git add`, `git commit`, `git merge` | Repository, Pull Request, Actions    |
+| **Collaboration**       | Possible, but mainly local tracking  | Easy team collaboration              |
+| **CI/CD**               | Does not provide CI/CD itself        | GitHub Actions can automate CI/CD    |
+| **Example**             | `git commit -m "Added chatbot"`      | Push project to a GitHub repository  |
+
+
+
+===========
+
+Simple relationship
+YOUR COMPUTER                     CLOUD
+
+
+Git                               GitHub
+────                              ──────
+Track changes  ─── git push ───►  Store code online
+               ◄── git pull ───   Get latest code
+
+========
+
+
+Easy example for your project
+FastAPI Project
+      ↓
+Git tracks your changes
+      ↓
+git commit
+      ↓
+git push
+      ↓
+GitHub Repository
+      ↓
+GitHub Actions (CI/CD)
+      ↓
+Deploy to Cloud Run 🚀
+
+In short:
+
+Git = Version control tool 🛠️
+GitHub = Online home for your Git projects ☁️
+
+====
