@@ -1,0 +1,93 @@
+Cloud Run — What is it?
+
+Cloud Run is a Google Cloud service that runs your application on the internet.
+
+For example, you create a FastAPI application:
+
+FastAPI Application
+       ↓
+Docker Container
+       ↓
+Cloud Run
+       ↓
+Live Website / API 🌐
+Simple example
+
+You have this project:
+
+college-ai-assistant/
+│
+├── main.py
+├── requirements.txt
+└── Dockerfile
+
+You deploy it to Cloud Run:
+
+Your Code
+   ↓
+Cloud Build
+   ↓
+Docker Container
+   ↓
+Cloud Run
+   ↓
+https://your-app.run.app 🌐
+
+
+========
+
+What Cloud Run does
+
+| Service               | Job                               |
+| --------------------- | --------------------------------- |
+| **Git**               | Tracks code changes               |
+| **GitHub**            | Stores code online                |
+| **Cloud Build**       | Builds your application/container |
+| **Artifact Registry** | Stores Docker images              |
+| **Cloud Run**         | Runs the application online       |
+
+
+===
+
+Complete flow
+👨‍💻 Developer writes code
+          ↓
+        Git
+          ↓
+       GitHub
+          ↓
+    Cloud Build
+          ↓
+   Docker Image
+          ↓
+ Artifact Registry
+          ↓
+      Cloud Run
+          ↓
+   🌐 Live Application
+
+=======
+
+
+Why Cloud Run is useful
+No need to manage servers
+Automatically scales up or down
+Works well with FastAPI, Flask, Django, Node.js, etc.
+Supports Docker containers
+Gives your application a public URL
+One-line meaning
+
+Cloud Run = A serverless platform that runs your containerized application and makes it available on the internet.
+
+For your FastAPI + Gemini AI chatbot projects, the simple architecture is:
+
+FastAPI code → Docker → Cloud Build → Cloud Run → Live AI application 🚀
+
+Cloud Run hosts the containerized FastAPI app, so the key deployment requirement is 
+configuring the container to listen on Cloud Run’s PORT environment variable before it can serve traffic reliably.
+
+======
+
+
+
+
