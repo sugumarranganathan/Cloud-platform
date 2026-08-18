@@ -1,0 +1,79 @@
+Token authentication is another method to connect Git with GitHub.
+
+SSH Key vs Token Method
+
+| Feature                        | SSH Key 🔑                         | Personal Access Token (PAT) 🎟️       |
+| ------------------------------ | ---------------------------------- | ------------------------------------- |
+| Authentication method          | Public + Private Key               | Secret token                          |
+| Used with GitHub               | ✅ Yes                              | ✅ Yes                                 |
+| Repository URL                 | SSH URL                            | HTTPS URL                             |
+| Example URL                    | `git@github.com:user/project.git`  | `https://github.com/user/project.git` |
+| Stored on                      | Private key stays on your computer | Token is generated from GitHub        |
+| Password replacement           | Yes                                | Yes, for Git operations over HTTPS    |
+| Easy for beginners             | Medium                             | Usually easier                        |
+| Must share private credential? | ❌ Never                            | ❌ Never share the token               |
+
+
+========
+
+Token method flow
+Your Computer
+      │
+      │ git push
+      ▼
+GitHub asks for authentication
+      │
+      ▼
+Username + Personal Access Token
+      │
+      ▼
+GitHub verifies token ✅
+      │
+      ▼
+Code pushed successfully 🚀
+
+====
+
+Example
+
+First connect your project using an HTTPS GitHub URL:
+
+git remote add origin https://github.com/USERNAME/REPOSITORY.git
+
+Then:
+
+git add .
+git commit -m "My update"
+git push
+
+When authentication is required:
+
+Username: your-github-username
+
+
+Password: YOUR_PERSONAL_ACCESS_TOKEN
+
+⚠️ Important: Do not use or share your normal GitHub password here. The Personal Access Token (PAT) acts like a password for Git over HTTPS.
+
+Simple comparison
+METHOD 1: SSH
+Computer 🔑 ───────────────► GitHub
+
+
+METHOD 2: TOKEN
+Computer 🎟️ Username + PAT ─► GitHub
+
+====
+
+My recommendation for you
+
+For a beginner working with GitHub projects, FastAPI, Docker, and Cloud Run, the Token (HTTPS) method is easier to understand initially. Later, when you use Git regularly, SSH keys are convenient because your computer can authenticate using the key pair.
+
+In short:
+SSH Key = Digital key authentication 🔑
+Token = Secret password-like authentication for GitHub HTTPS 🎟️
+
+For GitHub HTTPS access, the token replaces your password, while 
+creating a Personal Access Token with the correct permissions determines whether Git can authenticate successfully.
+
+=====
