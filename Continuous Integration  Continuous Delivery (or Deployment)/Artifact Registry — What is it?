@@ -1,0 +1,91 @@
+Artifact Registry — What is it?
+
+Artifact Registry is like a storage place for your application packages and Docker container images in Google Cloud.
+
+Simple flow
+Your FastAPI Code
+       ↓
+Cloud Build
+       ↓
+Creates Docker Image 📦
+       ↓
+Artifact Registry 🗄️
+       ↓
+Cloud Run
+       ↓
+Runs your App 🌐
+
+====
+
+Easy real-world example
+
+Think of it like this:
+
+| Google Cloud Service  | Simple Example                       |
+| --------------------- | ------------------------------------ |
+| **GitHub**            | Stores your source code 📁           |
+| **Cloud Build**       | Factory that builds the product 🏭   |
+| **Artifact Registry** | Warehouse that stores the product 📦 |
+| **Cloud Run**         | Takes the product and runs it 🚀     |
+
+
+====
+What is stored in Artifact Registry?
+
+For example, Cloud Build creates:
+
+college-ai-assistant:v1
+college-ai-assistant:v2
+college-ai-assistant:v3
+
+These Docker images are stored in Artifact Registry.
+
+========
+
+Then Cloud Run can use one:
+
+Artifact Registry
+       │
+       │ Docker Image
+       ▼
+Cloud Run
+       │
+       ▼
+Live Application 🌐
+
+=======
+
+Complete architecture
+👨‍💻 Write FastAPI Code
+          ↓
+        Git
+          ↓
+       GitHub
+          ↓
+     Cloud Build 🏭
+          ↓
+ Creates Docker Image 📦
+          ↓
+ Artifact Registry 🗄️
+          ↓
+      Cloud Run 🚀
+          ↓
+   🌐 Live Application
+
+=======
+
+One-line meaning
+
+Artifact Registry = Google's secure storage for Docker images and other build artifacts.
+
+So remember:
+
+GitHub = Code storage
+Cloud Build = Builds the Docker image
+Artifact Registry = Stores the Docker image
+Cloud Run = Runs the Docker image 🚀
+
+Artifact Registry stores the image that Cloud Run deploys, so 
+the image naming and deployment commands that connect Artifact Registry to Cloud Run determine which version of your FastAPI app goes live.
+
+========
