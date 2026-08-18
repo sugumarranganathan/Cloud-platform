@@ -1,0 +1,76 @@
+Git is a version control system used to track changes in your code.
+
+Simple example
+
+You create a project:
+
+My AI Chatbot
+
+You make changes every day:
+
+Day 1 → Create project
+Day 2 → Add FastAPI
+Day 3 → Add chatbot
+Day 4 → Fix bugs
+Day 5 → Deploy
+
+Git keeps track of these changes, like a history or save points in a game.
+
+======
+
+Basic Git workflow
+Your Code
+   ↓
+git add .
+   ↓
+git commit -m "Added chatbot feature"
+   ↓
+git push
+   ↓
+GitHub Repository
+
+====
+
+Important commands
+
+| Command                   | Meaning                             |
+| ------------------------- | ----------------------------------- |
+| `git init`                | Start Git in a project              |
+| `git status`              | Check changed files                 |
+| `git add .`               | Select all changes                  |
+| `git commit -m "message"` | Save a version                      |
+| `git log`                 | View history                        |
+| `git push`                | Upload code to GitHub               |
+| `git pull`                | Download latest changes from GitHub |
+| `git clone`               | Copy a GitHub project               |
+
+
+======
+
+Git vs GitHub
+Git = Tracks your code changes on your computer.
+GitHub = Online platform where you store and share Git repositories.
+
+====
+
+Your CI/CD connection
+You write code
+      ↓
+Git tracks changes
+      ↓
+git push
+      ↓
+GitHub
+      ↓
+GitHub Actions (CI/CD)
+      ↓
+Test + Build
+      ↓
+Deploy to Cloud Run 🚀
+
+So, Git is the tool that manages your code history, and GitHub can trigger CI/CD when you push your updated code.
+
+Git records your code history locally, while GitHub stores the repository online and can trigger automation when you 
+push a committed change to GitHub.
+
+===
