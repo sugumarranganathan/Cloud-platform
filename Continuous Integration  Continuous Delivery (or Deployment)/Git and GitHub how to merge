@@ -1,0 +1,111 @@
+Git and GitHub are not merged into one thing. They work together.
+
+Think of it like this:
+
+Your Computer                    Internet
+─────────────                    ────────
+
+
+Git                               GitHub
+Tracks code history      →       Stores code online
+
+======
+
+How to connect Git with GitHub
+Step 1: Create a project
+my-project/
+├── app.py
+├── requirements.txt
+└── README.md
+
+=====
+
+Step 2: Initialize Git
+
+Open the terminal inside your project:
+
+git init
+
+Now Git starts tracking your project.
+
+
+==========
+
+Step 3: Add files
+git add .
+
+This tells Git:
+
+"I want to include all these files."
+
+========
+
+Step 4: Commit
+git commit -m "Initial project"
+
+This creates a saved version in Git.
+
+======
+
+Step 5: Create a repository on GitHub
+
+On GitHub, create a new repository, for example:
+
+my-ai-project
+Step 6: Connect local Git to GitHub
+
+GitHub gives you a repository URL. Connect it:
+
+git remote add origin YOUR_GITHUB_REPOSITORY_URL
+
+Then push your code:
+
+git branch -M main
+git push -u origin main
+
+======
+
+Full connection flow
+YOUR COMPUTER
+┌──────────────────────┐
+│                      │
+│  Write Code          │
+│       ↓              │
+│  git add .           │
+│       ↓              │
+│  git commit          │
+│       ↓              │
+│       GIT            │
+└──────────┬───────────┘
+           │
+           │ git push
+           ↓
+┌──────────────────────┐
+│       GITHUB         │
+│                      │
+│ Your project online  │
+└──────────────────────┘
+
+======
+
+After making future changes
+git add .
+git commit -m "Updated chatbot feature"
+git push
+
+So the simple relationship is:
+
+Git = saves and tracks your code versions.
+GitHub = stores your Git project online.
+git push = sends your Git changes to GitHub.
+
+And this is where CI/CD can start:
+
+Git → GitHub → GitHub Actions → Test/Build → Deploy 🚀
+
+If by “merge” you mean merging two branches, such as feature into main, tell me—I can explain git merge with a simple real project example.
+
+Merging branches combines separate lines of development, and 
+merging a feature branch into main with Git commands makes the completed changes part of the main project history.
+
+=======
