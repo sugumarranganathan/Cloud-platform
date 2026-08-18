@@ -1,1 +1,106 @@
 
+CI/CD means Continuous Integration / Continuous Delivery (or Deployment).
+
+It is an automated procedure used to build, test, and deploy software.
+
+======
+
+Simple CI/CD Procedure
+Developer writes code
+        ↓
+Push code to GitHub
+        ↓
+CI: Automatically Build + Test
+        ↓
+If tests pass
+        ↓
+CD: Automatically Deploy
+        ↓
+Application goes Live 🚀
+
+=====
+
+1. CI — Continuous Integration
+
+When you change your project code and push it to GitHub:
+
+Write Code
+↓
+git add .
+↓
+git commit
+↓
+git push
+
+A CI tool automatically:
+
+Checks your code
+Installs dependencies
+Builds the application
+Runs tests
+Detects errors
+
+Example:
+
+GitHub
+   ↓
+GitHub Actions
+   ↓
+Install Python packages
+   ↓
+Run tests
+   ↓
+Build successful ✅
+
+===
+
+2. CD — Continuous Delivery/Deployment
+
+After CI succeeds, the application can automatically deploy to a cloud platform:
+
+CI Successful
+      ↓
+Docker Build
+      ↓
+Create Container
+      ↓
+Deploy to Cloud Run
+      ↓
+Live Application 🌐
+
+===
+
+Example related to your FastAPI + Docker + Cloud Run project
+You update FastAPI code
+        ↓
+Push to GitHub
+        ↓
+GitHub Actions starts
+        ↓
+Run tests
+        ↓
+Build Docker image
+        ↓
+Push image to Google Cloud
+        ↓
+Deploy to Cloud Run
+        ↓
+New version is LIVE 🚀
+
+====
+
+In one sentence
+
+CI/CD is an automated pipeline that takes your code from development → testing → building → deployment.
+
+CI = Check whether the code works.
+CD = Automatically release the working code to users.
+
+So, for your projects, a typical flow is:
+
+Python/FastAPI → GitHub → GitHub Actions (CI/CD) → Docker → Google Cloud Run → Live Website.
+
+For this FastAPI workflow, the deployment path becomes concrete when 
+GitHub Actions builds the Docker image and deploys it to Cloud Run after tests pass, so each successful push can publish a new version automatically.
+
+=====
