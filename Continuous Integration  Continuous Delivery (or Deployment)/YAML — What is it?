@@ -1,0 +1,133 @@
+YAML is a simple text file used to tell tools and platforms what steps and configuration they should follow.
+
+======
+
+YAML — What is it?
+
+YAML is a human-readable configuration file format.
+
+YAML stands for:
+
+YAML Ain't Markup Language
+
+It is commonly used to define configuration, automation, CI/CD pipelines, Docker-related setups, and cloud deployments.
+
+Simple YAML example
+name: Sugumar
+
+
+skills:
+  - Python
+  - FastAPI
+  - Google Cloud
+
+This means:
+
+Name: Sugumar
+
+
+Skills:
+• Python
+• FastAPI
+• Google Cloud
+
+=====
+
+Why YAML is important in CI/CD?
+
+For example, a GitHub Actions workflow might use:
+
+name: Deploy Application
+
+
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v4
+
+
+      - name: Deploy
+        run: echo "Deploying application..."
+
+======
+
+What happens here?
+Push code to GitHub
+        ↓
+GitHub reads YAML file
+        ↓
+Starts CI/CD workflow
+        ↓
+Runs the defined steps
+        ↓
+Build / Test / Deploy 🚀
+
+======
+
+YAML vs JSON
+
+| Feature            | YAML                   | JSON                 |
+| ------------------ | ---------------------- | -------------------- |
+| Easy for humans    | ✅ Very easy            | Medium               |
+| Uses `{ }`         | ❌ Usually no           | ✅ Yes                |
+| Uses indentation   | ✅ Yes                  | ❌ No                 |
+| Comments supported | ✅ Yes                  | ❌ No                 |
+| Common use         | Configurations & CI/CD | APIs & data exchange |
+
+
+=========
+
+Important YAML rule
+
+Indentation is very important.
+
+Correct:
+
+app:
+  name: MyApp
+  port: 8080
+
+Incorrect indentation can cause errors:
+
+app:
+name: MyApp
+  port: 8080
+
+=====
+
+
+Your Google Cloud + CI/CD flow
+FastAPI Code
+     ↓
+GitHub
+     ↓
+.github/workflows/deploy.yml  ← YAML file
+     ↓
+CI/CD Instructions
+     ↓
+Cloud Build
+     ↓
+Artifact Registry
+     ↓
+Cloud Run 🚀
+
+In one line:
+
+YAML is a simple text file used to tell tools and platforms what steps and configuration they should follow.
+
+For example, in CI/CD, the YAML file acts like an instruction sheet: when code is pushed → what to build → what to test → where to deploy.
+
+In CI/CD, YAML defines the workflow steps, so 
+a complete GitHub Actions YAML file that builds your FastAPI image and deploys it to Cloud Run turns the instruction sheet into an executable deployment pipeline.
+
+========
