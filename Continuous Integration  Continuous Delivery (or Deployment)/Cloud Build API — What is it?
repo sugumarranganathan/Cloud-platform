@@ -1,0 +1,102 @@
+Cloud Build API — What is it?
+
+Cloud Build API is a Google Cloud service that lets you automatically build, test, and deploy your application.
+
+====
+
+For your project, the flow can be:
+
+Your Code
+   ↓
+GitHub
+   ↓
+Cloud Build API
+   ↓
+Build Docker Container
+   ↓
+Store Image
+   ↓
+Deploy to Cloud Run 🚀
+
+======
+
+What Cloud Build does
+
+| Step | Cloud Build Action                |
+| ---- | --------------------------------- |
+| 1    | Gets your source code             |
+| 2    | Installs dependencies             |
+| 3    | Runs tests                        |
+| 4    | Builds Docker image               |
+| 5    | Pushes image to Artifact Registry |
+| 6    | Can deploy to Cloud Run           |
+
+
+=====
+
+
+Example for your FastAPI project
+
+You have:
+
+FastAPI Code
+Dockerfile
+requirements.txt
+
+==
+
+Cloud Build can run:
+
+Dockerfile
+    ↓
+Cloud Build API
+    ↓
+Docker Image Created
+    ↓
+Artifact Registry
+    ↓
+Cloud Run
+    ↓
+Live Application 🌐
+
+====
+
+Simple command
+gcloud builds submit --tag gcr.io/PROJECT-ID/my-app
+
+This sends your project to Google Cloud Build, which builds the container image.
+
+Then you can deploy it to Cloud Run.
+
+=======
+
+Cloud Build in CI/CD
+Developer
+   ↓
+git push
+   ↓
+GitHub
+   ↓
+Cloud Build Trigger
+   ↓
+CI: Build + Test
+   ↓
+CD: Deploy
+   ↓
+Cloud Run 🚀
+
+In simple words:
+
+Cloud Build API = Google's cloud service that automatically takes your application code and builds it into a deployable application/container.
+
+So the difference is:
+
+Git → Tracks your code
+GitHub → Stores your code online
+Cloud Build API → Automatically builds/tests your code
+Cloud Run → Runs your application for users 🌐
+
+Cloud Build turns your source into a deployable container, and 
+the next key decision is whether to trigger it manually with gcloud builds submit or automatically from GitHub pushes for Cloud Run deployments.
+
+=======
