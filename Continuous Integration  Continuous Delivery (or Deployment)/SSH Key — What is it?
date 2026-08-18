@@ -1,0 +1,70 @@
+SSH Key — What is it?
+
+An SSH key is a secure way to prove “this is me” when connecting your computer to a server or GitHub.
+
+Simple idea
+
+Instead of entering your GitHub username and password every time:
+
+Your Computer  🔑 ──────────>  GitHub
+              SSH Key
+
+GitHub checks the key and allows access.
+
+====
+
+SSH key has two parts
+
+| Key                | Location        | Purpose                              |
+| ------------------ | --------------- | ------------------------------------ |
+| **Private Key** 🔒 | Your computer   | Secret identity key — never share it |
+| **Public Key** 🔓  | GitHub / Server | Used to verify your identity         |
+
+
+=======
+How they work
+
+YOUR COMPUTER                    GITHUB
+
+
+Private Key 🔒
+      │
+      │ Secure authentication
+      ▼
+                         Public Key 🔓
+                              │
+                              ▼
+                        Access allowed ✅
+
+=======
+Why use SSH with GitHub?
+
+Without SSH, when working with GitHub, authentication may be required through other methods. With SSH configured, Git can securely authenticate your computer.
+
+========
+
+For example:
+
+git clone git@github.com:username/project.git
+
+Then:
+
+git add .
+git commit -m "Updated project"
+git push
+
+=======
+
+Important
+
+Never share your private SSH key.
+You only copy your public SSH key and add it to your GitHub account.
+
+In one line
+
+SSH Key = A secure digital key pair that lets your computer authenticate with GitHub or a server. 🔐
+
+An SSH key pair authenticates your computer without a password, and 
+adding the public key to GitHub and testing the connection with ssh -T confirms that your Git setup is ready.
+
+=========
