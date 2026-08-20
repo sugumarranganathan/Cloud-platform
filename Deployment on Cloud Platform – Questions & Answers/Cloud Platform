@@ -1,0 +1,75 @@
+Deployment on Cloud Platform – Questions and Answers
+
+1. What is Cloud?
+
+Cloud computing is the delivery of computing services — such as servers, storage, databases, networking, software, and AI tools — over the internet (“the cloud”) instead of using local computers or physical servers. It allows users to access powerful resources on demand, without having to buy, install, or maintain expensive hardware.
+
+2. Why is cloud computing needed in AI/ML projects?
+
+Cloud computing provides on-demand access to high-performance computing power, scalable storage, and AI/ML tools without needing expensive local hardware. It allows users to train, deploy, and scale models efficiently while reducing infrastructure and maintenance costs.
+
+3. What is the purpose of Google Cloud Deployment Manager?
+
+Google Cloud Deployment Manager is used to automate the creation and management of Google Cloud resources. It helps users define infrastructure configurations and deploy resources such as virtual machines, networks, storage, and other cloud services in a consistent and automated way.
+
+4. What are the key benefits of using cloud platforms for AI/ML?
+
+Scalability: Easily scale computing power up or down.
+
+Cost Efficiency: Pay only for what you use (pay-as-you-go model).
+
+Collaboration: Shared cloud workspaces for team projects.
+
+Automation: Built-in MLOps pipelines for continuous integration and deployment.
+
+Global Accessibility: Models and data are accessible from anywhere.
+
+5. Why Cloud is Needed in AI/ML Programming?
+
+High Computing Power: Cloud offers GPU/TPU-based servers that handle large-scale ML computations efficiently.
+
+Scalability: Resources can be automatically scaled up or down based on workload or user demand.
+
+Cost Efficiency: Pay only for what you use — no need for costly local hardware or maintenance.
+
+Big Data Storage: Provides secure, scalable, and easily accessible storage for massive datasets.
+
+Collaboration & Accessibility: Enables multiple users to work together on shared notebooks and data from anywhere.
+
+Easy Deployment: Allows quick deployment of trained models as APIs or web services.
+
+Automation with MLOps: Supports end-to-end ML automation — from data preparation to deployment and monitoring.
+
+6. How does Cloud Computing help meet resource demands in ML?
+
+ML algorithms—such as Decision Tree, Random Forest, and Deep Learning models—require heavy computation. Cloud infrastructure provides virtually unlimited processing power and storage that can scale automatically as workload increases.
+
+7. How does the Cloud improve data storage and accessibility for ML?
+
+Cloud platforms offer secure, distributed storage (like data lakes and warehouses) that can handle large datasets efficiently. They also ensure 24/7 accessibility, enabling teams to collaborate and access data from anywhere.
+
+8. How does the Cloud make ML projects more cost-effective?
+
+Cloud platforms follow a pay-as-you-go model, eliminating the need for costly hardware purchases. Businesses can access advanced ML tools only when needed, significantly reducing upfront investment and operational costs.
+
+9. What is the role of Cloud in scaling Machine Learning models?
+
+Cloud environments allow teams to experiment with multiple models simultaneously and scale infrastructure instantly to handle training, testing, or deployment, ensuring agility and faster innovation.
+
+10. How does Cloud simplify ML model deployment?
+
+Cloud services like AWS SageMaker, Google Cloud Platform (GCP), and Azure Machine Learning provide model deployment, load balancing, and version control — making it easy to host and serve models as APIs globally.
+
+11. How does Machine Learning in the Cloud impact modern businesses?
+
+It enables businesses to analyze big data, automate decisions, and innovate faster without infrastructure constraints—leading to smarter operations, cost savings, and a competitive advantage.
+
+12. What are some popular Cloud platforms for Machine Learning?
+
+Amazon Web Services (AWS) – SageMaker, Comprehend, Rekognition
+
+Google Cloud Platform (GCP) – Vertex AI, AutoML, TensorFlow integration
+
+Microsoft Azure – Azure ML Studio, Cognitive Services
+
+IBM Cloud – Watson Studio, Watson Machine Learning
